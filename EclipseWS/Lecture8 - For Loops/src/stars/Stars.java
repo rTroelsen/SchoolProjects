@@ -23,18 +23,51 @@ public class Stars {
     
     public void starPictureB() {
         for (int row = 1; row <= MAX_ROWS; row++) {
-            for (int star = 10; star >= row; star++) {
-                System.out.printf("*");
+            for (int stars = 10; stars > row; stars--) {
+                System.out.print(" ");
+            }
+            for (int spaces = 1; spaces <= row; spaces++) {
+                System.out.print("*");
             }
             System.out.println();
         }
     }
     
     public void starPictureC() {
-        // TODO
+        for (int row = MAX_ROWS; row >= 1; row--) {
+            for (int stars = 10; stars > row; stars--) {
+                System.out.print(" ");
+            }
+            for (int spaces = 1; spaces <= row; spaces++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
     
     public void starPictureD() {
-        // TODO
+        {
+            
+            for (int row = 1; row <= MAX_ROWS / 2; row++) {
+                for (int space = row; space < MAX_ROWS / 2; space++) {
+                    System.out.print(" ");
+                }
+                for (int star = 1; star < (row * 2); star++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+            
+            for (int row = 5; row >= 1; row--) {
+                for (int space = 5; space > row; space--) {
+                    System.out.print(" ");
+                }
+                for (int star = 1; star < (row * 2); star++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+            }
+
+        }
     }
 }
