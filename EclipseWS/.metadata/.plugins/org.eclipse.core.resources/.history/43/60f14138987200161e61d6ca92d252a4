@@ -1,0 +1,10 @@
+package model;
+
+public class DemoApp {
+    
+    public static void main(String[] args) {
+        System.out.print("My Lucky Number Is ");
+        System.out.println(3 + 4 + 5);
+    }
+    
+}

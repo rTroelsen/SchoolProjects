@@ -1,0 +1,24 @@
+package classes;
+
+public class SodaCan {
+
+    double height;
+    double diameter;
+    
+    public SodaCan(double height, double diameter) {
+        this.height = height;
+        this.diameter = diameter;
+    }
+    
+    double top = (diameter / 2) * Math.PI;
+    double side = 2 * Math.PI * (diameter / 2) * height;
+    
+    public double getVolume() {
+        return top * height;
+    }
+
+    public double getSurfaceArea() {
+        return top * 2 * side;
+    }
+    
+}

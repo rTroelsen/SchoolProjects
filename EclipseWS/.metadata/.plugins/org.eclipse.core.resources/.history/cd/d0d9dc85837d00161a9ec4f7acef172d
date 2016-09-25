@@ -1,0 +1,31 @@
+
+public class Copier {
+    private int paper;
+
+    public Copier() {
+        this.paper = paper;
+    }
+    
+    public int Copier(int paper) {
+        return null;
+    }
+
+    public void insertPaper(int paper) {
+        this.paper += paper;
+    }
+
+    public int getPaper() {
+        return paper;
+    }
+
+    public void makeCopy() {
+        if (this.paper <= 0) {
+            System.out.println("Papertray empty");
+        }
+        else {
+            this.paper--;
+            
+        }
+    }
+
+}

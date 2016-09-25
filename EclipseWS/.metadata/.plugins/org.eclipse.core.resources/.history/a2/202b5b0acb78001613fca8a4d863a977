@@ -1,0 +1,10 @@
+package classes;
+
+public class NameTest {
+    
+    public static void main(String[] args) {
+        String first = Name.getUserName("Magrethe", "Mosbæk", "Dybdahl");
+        System.out.println(first);
+    }
+    
+}

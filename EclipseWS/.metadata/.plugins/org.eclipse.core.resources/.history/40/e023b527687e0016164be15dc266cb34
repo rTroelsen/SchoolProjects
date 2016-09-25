@@ -1,0 +1,21 @@
+package Exercises;
+
+import java.util.Scanner;
+
+public class test {
+    Scanner scan = new Scanner(System.in);
+    
+    int satis = scan.nextInt();
+    double pris = scan.nextDouble();
+    
+    if(satis == 1) {
+        pris *= 1.20;
+    }
+    else if (satis == 2) {
+        pris *= 1.15;
+    }
+    else if (satis == 3) {
+        pris *= 1.10;
+    }
+
+}

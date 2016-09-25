@@ -1,0 +1,14 @@
+package Exercises;
+
+public class Test {
+    public static void main(String[] args) {
+        int i = 1;
+        int g = 0;
+
+        while (i <= 10) {
+            i++;
+            g = g + i;
+        }
+        System.out.println(g);
+    }
+}

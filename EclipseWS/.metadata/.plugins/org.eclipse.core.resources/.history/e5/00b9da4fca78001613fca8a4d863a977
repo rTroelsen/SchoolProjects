@@ -1,0 +1,46 @@
+package classes;
+
+public class Name {
+
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    
+    public Name(String firstName, String middleName, String lastName) {
+        
+    }
+
+    public static String getFirstName() {
+        return this.firstName;
+    }
+
+    public static void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public static String getMiddleName() {
+        return this.middleName;
+    }
+
+    public static void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public static String getLastName() {
+        return this.lastName;
+    }
+
+    public static void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
+    public static String getInitials(String first, String middle, String last) {
+        return this.firstName.substring(0, 1) + this.middleName.substring(0, 1)
+            + this.lastName.substring(0, 1);
+    }
+    
+    public static String getUserName(String first, String middle, String last) {
+        return Name.firstName.substring(0, 2) + Name.middleName.length()
+            + Name.lastName.substring(lastName.length() - 2, lastName.length());
+    }
+}

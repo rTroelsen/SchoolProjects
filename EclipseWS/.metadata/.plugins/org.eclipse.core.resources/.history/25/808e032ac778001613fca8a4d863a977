@@ -1,0 +1,8 @@
+package classes;
+
+public class ExerciseTests {
+    public static void main(String[] args){
+        
+    }
+    
+}

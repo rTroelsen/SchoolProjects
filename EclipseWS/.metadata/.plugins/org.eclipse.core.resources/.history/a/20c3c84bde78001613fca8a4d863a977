@@ -1,0 +1,36 @@
+package classes;
+
+import java.util.Scanner;
+
+public class Exercise1 {
+
+    private double width;
+    private double length;
+    
+    public Exercise1(double width, double length) {
+        this.width = width;
+        this.length = length;
+    }
+    
+    Scanner sc = new Scanner(System.in);
+    
+    public int getA() {
+        System.out.print("Enter width of the rectangle: ");
+        int width = sc.nextInt();
+        return width;
+    }
+    
+    public int getB() {
+        System.out.print("Enter length of the rectangle: ");
+        int length = sc.nextInt();
+        return length;
+    }
+    
+    public int getArea(int a, int b) {
+        return a * b;
+    }
+
+    public int getPerimeter(int a, int b) {
+        return a + a + b + b;
+    }
+}

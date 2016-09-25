@@ -1,0 +1,9 @@
+package Exercises;
+
+public class testpik {
+    public static void main(String[] args) {
+        test hej = new test();
+        double result = hej.getPrice();
+        System.out.println(result);
+    }
+}

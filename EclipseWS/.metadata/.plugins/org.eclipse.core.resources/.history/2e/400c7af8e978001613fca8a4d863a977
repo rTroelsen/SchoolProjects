@@ -1,0 +1,32 @@
+package classes;
+
+public class Bug {
+    private int initialPosition;
+    private boolean direct;
+
+    public Bug(int initialPosition) {
+        this.initialPosition = initialPosition;
+    }
+
+    public void turn() {
+        if (direct) {
+            direct = false;
+        }
+        if (!direct) {
+            direct = true;
+        }
+    }
+
+    public void move() {
+        if (direct) {
+            this.initialPosition++;
+        }
+        if (!direct) {
+            this.initialPosition--;
+        }
+    }
+    public int getPosition() {
+
+    }
+
+}

@@ -1,0 +1,30 @@
+package classes;
+
+public class BugTester {
+
+    public static void main(String[] args) {
+        Bug bug = new Bug(5);
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+        bug.turn();
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+        bug.turn();
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+        bug.move();
+        System.out.println(bug.getPosition());
+    }
+
+}

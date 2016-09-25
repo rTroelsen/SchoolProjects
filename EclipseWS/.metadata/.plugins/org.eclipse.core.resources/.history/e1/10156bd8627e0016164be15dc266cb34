@@ -1,0 +1,74 @@
+package Exercises;
+
+import java.util.Scanner;
+
+public class Cards {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String value = scan.next();
+        
+        String result = "";
+        
+        if (value.charAt(0) == 'K') {
+            result += "King ";
+        }
+        else if (value.charAt(0) == 'Q') {
+            result += "Queen ";
+        }
+        else if (value.charAt(0) == 'J') {
+            result += "Jack ";
+        }
+        else if (value.charAt(0) == 'A') {
+            result += "Ace ";
+        }
+        else if (value.charAt(0) == '2') {
+            result += "Two ";
+        }
+        else if (value.charAt(0) == '3') {
+            result += "Three ";
+        }
+        else if (value.charAt(0) == '4') {
+            result += "Four ";
+        }
+        else if (value.charAt(0) == '5') {
+            result += "Five ";
+        }
+        else if (value.charAt(0) == '6') {
+            result += "Six ";
+        }
+        else if (value.charAt(0) == '7') {
+            result += "Seven ";
+        }
+        else if (value.charAt(0) == '8') {
+            result += "Eight ";
+        }
+        else if (value.charAt(0) == '9') {
+            result += "Nine ";
+        }
+        else if (value.substring(0, 1).contains("10")) {
+            result += "Ten ";
+        }
+        else {
+            System.out.print("What? ");
+        }
+        
+        if (value.charAt(1) == 'H') {
+            result += "of Hearts";
+        }
+        else if (value.charAt(1) == 'D') {
+            result += "of Diamonds";
+        }
+        else if (value.charAt(1) == 'S') {
+            result += "of Spades";
+        }
+        else if (value.charAt(1) == 'C') {
+            result += "of Clubs";
+        }
+        else {
+            System.out.print("What? ");
+        }
+        
+        System.out.println(result);
+        
+    }
+}

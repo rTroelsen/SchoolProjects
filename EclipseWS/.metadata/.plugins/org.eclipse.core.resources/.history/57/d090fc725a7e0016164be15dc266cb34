@@ -1,0 +1,40 @@
+package Exercises;
+
+import java.util.Scanner;
+
+public class Cards {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Enter card value (e.g. QS for Queen of Spades)");
+        String value = scan.next();
+        
+        if (value.charAt(0) == 'Q') {
+            if (value.charAt(1) == 'D') {
+                System.out.println("Queen of Diamonds");
+            }
+            else if (value.charAt(1) == 'H') {
+                System.out.println("Queen of Hearts");
+            }
+            else if (value.charAt(1) == 'S') {
+                System.out.println("Queen of Spades");
+            }
+            else {
+                System.out.println("Queen of Clubs");
+            }
+        }
+        else if (value.charAt(0) == 'K') {
+            if (value.charAt(1) == 'D') {
+                System.out.println("King of Diamonds");
+            }
+            else if (value.charAt(1) == 'H') {
+                System.out.println("King of Hearts");
+            }
+            else if (value.charAt(1) == 'S') {
+                System.out.println("King of Spades");
+            }
+            System.out.println("King of Clubs");
+        }
+    }
+    
+}

@@ -1,0 +1,29 @@
+package Exercises;
+
+import java.util.Scanner;
+
+public class test {
+    public double getPrice() {
+
+        Scanner scan = new Scanner(System.in);
+        
+        int satis = scan.nextInt();
+        double pris = scan.nextDouble();
+
+        if (satis == 1) {
+            pris *= 1.2;
+            return pris;
+        }
+        else if (satis == 2) {
+            pris *= 1.15;
+            return pris;
+        }
+        else if (satis == 3) {
+            pris *= 1.10;
+            return pris;
+        }
+        else {
+            return 0;
+        }
+    }
+}

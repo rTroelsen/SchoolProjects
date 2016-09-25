@@ -1,0 +1,16 @@
+package classes;
+
+public class Program {
+
+    public static void main(String[] args) {
+        String ord1 = "Datamatiker";
+        String ord2 = "Uddannelsen";
+        String ord3 = ord1 + ord2.toLowerCase();
+
+        System.out.println(ord1.toUpperCase());
+        System.out.println(ord2.toLowerCase());
+        System.out.println(ord1 + " " + ord2);
+
+    }
+
+}

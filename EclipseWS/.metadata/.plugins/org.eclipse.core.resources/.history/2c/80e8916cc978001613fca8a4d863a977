@@ -1,0 +1,12 @@
+package classes;
+
+public class Name {
+
+    public static String firstName;
+    public static String middleName;
+    public static String lastName;
+
+    public Name(String firstName, String middleName, String lastName) {
+
+    }
+}

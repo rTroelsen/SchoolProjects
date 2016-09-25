@@ -1,0 +1,37 @@
+package classes;
+
+import java.util.Scanner;
+
+public class Exercise1 {
+    
+    private int a;
+    private int b;
+    private int c;
+    private int d;
+
+    Scanner sc = new Scanner(System.in);
+
+    public int getA() {
+        System.out.print("Enter side A on the rectangle");
+        int a = sc.nextInt();
+        return a;
+    }
+
+    public int getB() {
+        System.out.print("Enter side A on the rectangle");
+        int b = sc.nextInt();
+        return b;
+    }
+
+    public int getC() {
+        System.out.print("Enter side A on the rectangle");
+        int c = sc.nextInt();
+        return c;
+    }
+
+    public int getD() {
+        System.out.print("Enter side A on the rectangle");
+        int d = sc.nextInt();
+        return d;
+    }
+}

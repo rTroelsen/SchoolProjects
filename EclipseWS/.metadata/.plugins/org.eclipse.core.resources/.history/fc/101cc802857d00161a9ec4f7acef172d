@@ -1,0 +1,10 @@
+
+public class TestCopier {
+
+    public static void main(String[] args) {
+        Copier copy = new Copier(10);
+        copy.makeCopy();
+        copy.getPaper();
+    }
+
+}

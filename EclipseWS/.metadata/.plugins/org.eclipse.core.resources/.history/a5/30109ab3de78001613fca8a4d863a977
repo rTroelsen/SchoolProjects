@@ -1,0 +1,13 @@
+package classes;
+
+public class Exercise1Test {
+    public static void main(String[] args) {
+        Exercise1 test = new Exercise1();
+        
+        int a = test.getA();
+        int b = test.getB();
+        System.out.println("Area is: " + test.getArea(a, b));
+        System.out.println("Perimeter is: " + test.getPerimeter(a, b));
+        
+    }
+}
