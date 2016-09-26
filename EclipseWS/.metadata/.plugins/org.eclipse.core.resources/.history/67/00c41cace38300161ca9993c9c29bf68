@@ -1,0 +1,111 @@
+package dicegames;
+
+import java.util.Scanner;
+
+public class CrapsPlay {
+
+    /**
+     * The first die in the pair.
+     */
+    private Die die1;
+    
+    /**
+     * The second die in the pair.
+     */
+    private Die die2;
+    
+    private PairOfDices dices;
+    
+    private boolean win = false;
+
+    private boolean endGame = false;
+    
+    private int rolls = 0;
+    
+    private int point = 0;
+
+    private Scanner scan;
+
+    public CrapsPlay() {
+        die1 = new Die(6);
+        die2 = new Die(6);
+        scan = new Scanner(System.in);
+        dices = new PairOfDices();
+    }
+
+    public void welcomeMessage() {
+        System.out.println("Welcome to CrapsPlay! Let's begin!");
+    }
+    
+    public void endMessage() {
+        if (win == true) {
+            System.out.println("Congratulations, you win!");
+        }
+        else {
+            System.out.println("I'm sorry, you've lost!");
+        }
+    }
+    
+    public void takeTurn() {
+        dices.rollBothDices();
+        System.out.println(dices.sumOfDices());
+
+        if (rolls == 0) {
+            if (dices.sumOfDices() == 7 || dices.sumOfDices() == 11) {
+                win = true;
+                endGame = true;
+                endMessage();
+            }
+            else if (dices.sumOfDices() == 2 || dices.sumOfDices() == 3
+                || dices.sumOfDices() == 12) {
+                win = false;
+                endGame = true;
+                endMessage();
+            }
+            else {
+                point = dices.sumOfDices();
+            }
+
+        }
+        else {
+            if (point == dices.sumOfDices()) {
+                win = true;
+                endGame = true;
+                endMessage();
+            }
+            else if (dices.sumOfDices() == 7) {
+                win = false;
+                endGame = true;
+                endMessage();
+            }
+        }
+
+        rolls++;
+    }
+    
+    public void startGame() {
+        welcomeMessage();
+        while (!endGame) {
+            System.out.println("Throw dices?");
+            String proceed = scan.nextLine();
+            if (proceed.equalsIgnoreCase("N")) {
+                endGame = true;
+            }
+            else {
+                takeTurn();
+            }
+        }
+    }
+
+    public void proceedWithGame() {
+        System.out.println("Do you want to continue?");
+        String proceed = scan.nextLine();
+        if (proceed.equalsIgnoreCase("y")) {
+            ;
+        }
+        {
+            endGame = false;
+        }
+    }
+    
+}

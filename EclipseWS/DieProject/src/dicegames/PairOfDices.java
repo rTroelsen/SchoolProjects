@@ -5,47 +5,62 @@ package dicegames;
  * throw two dice at once.
  */
 public class PairOfDices {
-
+    
     /**
      * The first die in the pair.
      */
     private Die die1;
-
+    
     /**
      * The second die in the pair.
      */
     private Die die2;
-
+    
     /**
      * Amount of rolls made since application start
      */
     private int rolls = 0;
-
+    
     /**
      * Amount of sixes rolled since first roll
      */
     private int six = 0;
-    
+
     /**
      * Amount of fives rolled since first roll
      */
     private int five = 0;
-    
+
+    /**
+     * Amount of fours rolled since first roll
+     */
+    private int four = 0;
+
+    /**
+     * Amount of threes rolled since first roll
+     */
+    private int three = 0;
+
+    /**
+     * Amount of twos rolled since first roll
+     */
+    private int two = 0;
+
     /**
      * Amount of ones rolled since first roll
      */
     private int one = 0;
-
+    
     /**
      * Amount of times dices has had the same value
      */
     private int sameValue = 0;
-
+    
     /**
      * Holds the value of the highest roll made
      */
     private int highestRoll = 0;
-    
+
     /**
      * Constructor for objects of class PairOfDices with no parameters
      */
@@ -53,7 +68,7 @@ public class PairOfDices {
         die1 = new Die(6);
         die2 = new Die(6);
     }
-    
+
     /**
      * Constructor for objects of class PairOfDices with parameter 'sides'
      * @param sides
@@ -62,16 +77,16 @@ public class PairOfDices {
         die1 = new Die(sides);
         die2 = new Die(sides);
     }
-    
+
     /**
      * Method calls roll on both dices of the object
      */
     public void rollBothDices() {
         die1.roll();
         die2.roll();
-
+        
         /**
-         * Checks if the value of die1 is 6, 5 or 1
+         * Checks the value of die1
          */
         if (die1.getFaceValue() == 6) { // is it 6?
             setSix(getSix() + 1); // Yes! Add one to variable 'six'
@@ -79,12 +94,21 @@ public class PairOfDices {
         else if (die1.getFaceValue() == 5) { // is it 5?
             setFive(getFive() + 1); // Yes! Add one to variable 'five'
         }
-        else if (die1.getFaceValue() == 1) { // is it 1?
-            setOne(getOne() + 1); // Yes! Add one to variable 'one'
+        else if (die1.getFaceValue() == 4) { // is it 4?
+            setFour(getFour() + 1); // Yes! Add one to variable 'one'
         }
-
+        else if (die1.getFaceValue() == 3) { // is it 3?
+            setThree(getThree() + 1); // Yes! Add one to variable 'five'
+        }
+        else if (die1.getFaceValue() == 2) { // is it 2?
+            setTwo(getTwo() + 1); // Yes! Add one to variable 'one'
+        }
+        else if (die1.getFaceValue() == 1) { // is it 1?
+            setOne(getOne() + 1); // Yes! Add one to variable 'five'
+        }
+        
         /**
-         *  Checks if the value of die2 is 6, 5 or 1
+         *  Checks the value of die2
          */
         if (die2.getFaceValue() == 6) { // is it 6?
             setSix(getSix() + 1); // Yes! Add one to variable 'six'
@@ -92,8 +116,17 @@ public class PairOfDices {
         else if (die2.getFaceValue() == 5) { // is it 5?
             setFive(getFive() + 1); // Yes! Add one to variable 'five'
         }
+        else if (die2.getFaceValue() == 4) { // is it 4?
+            setFour(getFour() + 1); // Yes! Add one to variable 'one'
+        }
+        else if (die2.getFaceValue() == 3) { // is it 3?
+            setThree(getThree() + 1); // Yes! Add one to variable 'five'
+        }
+        else if (die2.getFaceValue() == 2) { // is it 2?
+            setTwo(getTwo() + 1); // Yes! Add one to variable 'one'
+        }
         else if (die2.getFaceValue() == 1) { // is it 1?
-            setOne(getOne() + 1); // Yes! Add one to variable 'one'
+            setOne(getOne() + 1); // Yes! Add one to variable 'five'
         }
 
         /**
@@ -103,7 +136,7 @@ public class PairOfDices {
         if (die1.getFaceValue() == die2.getFaceValue()) {
             setSameValue(getSameValue() + 1);
         }
-
+        
         /**
          *  Checks if the value of the new roll is greater than the highest roll
          */
@@ -111,10 +144,10 @@ public class PairOfDices {
             // if it is, we assign the new rolls value to highestRoll
             setHighestRoll(die1.getFaceValue() + die2.getFaceValue());
         }
-        
+
         setRolls(getRolls() + 1); //add one to amount of rolls
     }
-    
+
     /**
      * Returns the sum of the pair of dices
      * @return
@@ -122,11 +155,11 @@ public class PairOfDices {
     public int sumOfDices() {
         return die1.getFaceValue() + die2.getFaceValue();
     }
-    
+
     /**
      * Resets all values of the PairOfDices object
      */
-    
+
     public void resetPairOfDices() {
         setRolls(0);
         setSix(0);
@@ -135,77 +168,21 @@ public class PairOfDices {
         setSameValue(0);
         setHighestRoll(0);
     }
-    
+
     /**
      * @return the sameValue
      */
     public int getSameValue() {
         return sameValue;
     }
-    
+
     /**
      * @param sameValue the sameValue to set
      */
     public void setSameValue(int sameValue) {
         this.sameValue = sameValue;
     }
-    
-    /**
-     * @return the six
-     */
-    public int getSix() {
-        return six;
-    }
-    
-    /**
-     * @param six the six to set
-     */
-    public void setSix(int six) {
-        this.six = six;
-    }
-    
-    /**
-     * @return the rolls
-     */
-    public int getRolls() {
-        return rolls;
-    }
-    
-    /**
-     * @param rolls the rolls to set
-     */
-    public void setRolls(int rolls) {
-        this.rolls = rolls;
-    }
-    
-    /**
-     * @return the five
-     */
-    public int getFive() {
-        return five;
-    }
-    
-    /**
-     * @param five the five to set
-     */
-    public void setFive(int five) {
-        this.five = five;
-    }
-    
-    /**
-     * @return the one
-     */
-    public int getOne() {
-        return one;
-    }
-    
-    /**
-     * @param one the one to set
-     */
-    public void setOne(int one) {
-        this.one = one;
-    }
-    
+
     /**
      * @return the highestRoll
      */
@@ -218,5 +195,103 @@ public class PairOfDices {
      */
     public void setHighestRoll(int highestRoll) {
         this.highestRoll = highestRoll;
+    }
+
+    /**
+     * @return the rolls
+     */
+    public int getRolls() {
+        return rolls;
+    }
+
+    /**
+     * @param rolls the rolls to set
+     */
+    public void setRolls(int rolls) {
+        this.rolls = rolls;
+    }
+
+    /**
+     * @return the six
+     */
+    public int getSix() {
+        return six;
+    }
+
+    /**
+     * @param six the six to set
+     */
+    public void setSix(int six) {
+        this.six = six;
+    }
+
+    /**
+     * @return the five
+     */
+    public int getFive() {
+        return five;
+    }
+
+    /**
+     * @param five the five to set
+     */
+    public void setFive(int five) {
+        this.five = five;
+    }
+    
+    /**
+     * @return the four
+     */
+    public int getFour() {
+        return four;
+    }
+
+    /**
+     * @param four the four to set
+     */
+    public void setFour(int four) {
+        this.four = four;
+    }
+    
+    /**
+     * @return the three
+     */
+    public int getThree() {
+        return three;
+    }
+    
+    /**
+     * @param three the three to set
+     */
+    public void setThree(int three) {
+        this.three = three;
+    }
+    
+    /**
+     * @return the two
+     */
+    public int getTwo() {
+        return two;
+    }
+    
+    /**
+     * @param two the two to set
+     */
+    public void setTwo(int two) {
+        this.two = two;
+    }
+    
+    /**
+     * @return the one
+     */
+    public int getOne() {
+        return one;
+    }
+
+    /**
+     * @param one the one to set
+     */
+    public void setOne(int one) {
+        this.one = one;
     }
 }

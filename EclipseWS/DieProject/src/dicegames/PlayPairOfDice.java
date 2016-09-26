@@ -41,6 +41,10 @@ public class PlayPairOfDice {
      *  - How many doubles you have hit
      *  - What your highest roll was
      *  - How many sixes you have hit
+     *  - How many fives you have hit
+     *  - How many fours you have hit
+     *  - How many threes you have hit
+     *  - How many twos you have hit
      *  - How many ones you have hit
      *
      *  Then thanks you for playing the game.
@@ -50,6 +54,10 @@ public class PlayPairOfDice {
         System.out.println("You've hit doubles " + dices.getSameValue() + " times!");
         System.out.println("Your highest roll was: " + dices.getHighestRoll() + "!");
         System.out.println("You have rolled " + dices.getSix() + " sixes!");
+        System.out.println("You have rolled " + dices.getFive() + " fives!");
+        System.out.println("You have rolled " + dices.getFour() + " fours!");
+        System.out.println("You have rolled " + dices.getThree() + " threes!");
+        System.out.println("You have rolled " + dices.getTwo() + " twos!");
         System.out.println("You have rolled " + dices.getOne() + " ones!");
         System.out.println("Thanks for playing, please come again!");
     }
