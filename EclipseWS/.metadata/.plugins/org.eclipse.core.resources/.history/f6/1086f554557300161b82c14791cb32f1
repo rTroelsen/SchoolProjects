@@ -1,0 +1,18 @@
+package PRO1;
+
+public class P29 {
+
+    public static void main(String[] args) {
+        int distance = 22;
+        int start = 12000;
+        int end = 14500;
+        int workdays = 64;
+
+        int workmiles = distance * workdays;
+        int miles = end-start;
+
+        double result = workmiles / miles * 100
+
+    }
+
+}

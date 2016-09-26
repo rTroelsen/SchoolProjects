@@ -1,0 +1,12 @@
+package dicegames;
+
+public class PlayPairOfDice {
+    
+    public static void main(String[] args) {
+        PairOfDices dies = new PairOfDices(6);
+        dies.rollBothDices();
+        System.out.println(dies.sumOfDices());
+
+    }
+    
+}

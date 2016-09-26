@@ -1,0 +1,26 @@
+package PRO1;
+
+public class P28 {
+    
+    public static void main(String[] args) {
+        int distance = 20;
+        int eficiency = 16;
+        int resultb = 20;
+        int gas = 4;
+        double mile = 1.05;
+        
+        double result = ((distance / eficiency) * gas) + (mile * distance);
+        System.out.println(result);
+
+        if (resultb < result) {
+            System.out.println("car");
+        }
+
+        if (resultb > result) {
+            System.out.println("Train");
+        }
+        if (result == resultb) {
+            System.out.println("either");
+        }
+    }
+}

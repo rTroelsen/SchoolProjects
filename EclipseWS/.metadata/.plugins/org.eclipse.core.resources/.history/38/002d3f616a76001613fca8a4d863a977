@@ -1,0 +1,21 @@
+package classes.employee;
+
+public class TestApp {
+
+    public static void main(String[] args) {
+        Employee emp = new Employee("Kristian", 32);
+        Employee mig = new Employee("Rasmus", 23);
+        System.out.println(emp.getName());
+
+        emp.setName("Christian");
+        System.out.println(emp.getName());
+
+        emp.setAge(32);
+        System.out.println(emp.getAge());
+
+        System.out.println(mig.getName() + mig.getAge());
+        emp.increaseAgeByOne(23);
+        System.out.println(emp.getAge());
+    }
+
+}

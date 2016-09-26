@@ -1,0 +1,58 @@
+package dicegames;
+
+/**
+ * This class models one pair of dices. This is useful for games where you have to
+ * throw two dice at once.
+ */
+public class PairOfDices {
+
+    /**
+     * The first die in the pair.
+     */
+    private Die die1;
+
+    /**
+     * The second die in the pair.
+     */
+    private Die die2;
+
+    /**
+     * Amount of rolls made since application start
+     */
+    public int rolls = 0;
+
+    /**
+     * Constructor for objects of class PairOfDices with no parameters
+     */
+    public PairOfDices() {
+        die1 = new Die(6);
+        die2 = new Die(6);
+    }
+    
+    /**
+     * Constructor for objects of class PairOfDices with parameter 'sides'
+     * @param sides
+     */
+    public PairOfDices(int sides) {
+        die1 = new Die(sides);
+        die2 = new Die(sides);
+    }
+    
+    /**
+     * Method calls roll on both dices of the object (adds 1 to field "rolls")
+     */
+    public void rollBothDices() {
+        die1.roll();
+        die2.roll();
+        rolls += 1;
+    }
+    
+    /**
+     * Returns the sum of the pair of dices
+     * @return
+     */
+    public int sumOfDices() {
+        return die1.getFaceValue() + die2.getFaceValue();
+    }
+
+}

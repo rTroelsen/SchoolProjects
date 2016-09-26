@@ -1,0 +1,62 @@
+package dicegames;
+
+import java.util.Scanner;
+
+public class PlayPairOfDice {
+
+    /**
+     * How many rolls have been rolled.
+     */
+    private int rolls;
+
+    /**
+     * The scanner used for reading user input.
+     */
+    private Scanner scan;
+
+    /**
+     * The die used in the game.
+     */
+    private PairOfDices dices;
+
+    /**
+     * Constructs the PlayPairOfDice game.
+     */
+    public PlayPairOfDice() {
+        dices = new PairOfDices();
+        scan = new Scanner(System.in);
+    }
+
+    private void welcomeMessage() {
+        System.out.println("Welcome to the greatest dice game!");
+    }
+    
+    public void endMessage() {
+        System.out.println("Thanks for playing, please come again!");
+    }
+
+    public void takeTurn() {
+        dices.rollBothDices();
+        rolls++;
+        System.out.println("Your roll is: " + dices.getRolls() + "!");
+    }
+
+    public void startGame() {
+        welcomeMessage();
+
+        boolean finished = false;
+
+        while (!finished) {
+            System.out.println("Throw dices? Y/N");
+            String proceedWithGame = scan.nextLine();
+            if (proceedWithGame.equalsIgnoreCase("N")) {
+                finished = true;
+            }
+            else {
+                takeTurn();
+            }
+        }
+    }
+
+    endMessage();
+}

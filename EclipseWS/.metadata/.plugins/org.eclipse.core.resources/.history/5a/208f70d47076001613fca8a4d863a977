@@ -1,0 +1,23 @@
+package PersonExample;
+
+public class Person {
+    
+    private String name;
+    private String adress;
+    private int monthlySalary;
+    
+    public Person(String name, String adress, int monthlySalary) {
+        this.name = name;
+        this.adress = adress;
+        this.monthlySalary = monthlySalary;
+        
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+}

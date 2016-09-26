@@ -1,0 +1,33 @@
+package dicegames;
+
+import java.util.Scanner;
+
+public class PlayPairOfDice {
+
+    /**
+     * How many rolls have been rolled.
+     */
+    private int rolls;
+
+    /**
+     * The scanner used for reading user input.
+     */
+    private Scanner scan;
+
+    /**
+     * The die used in the game.
+     */
+    private PairOfDices dices;
+
+    /**
+     * Constructs the PlayPairOfDice game.
+     */
+    public PlayPairOfDice() {
+        dices = new PairOfDices();
+        scan = new Scanner(System.in);
+    }
+
+    private void welcomeMessage() {
+        System.out.println("Welcome to the greatest dice game!");
+    }
+}

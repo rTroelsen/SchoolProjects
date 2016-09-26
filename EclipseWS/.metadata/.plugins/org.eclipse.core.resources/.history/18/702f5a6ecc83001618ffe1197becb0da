@@ -1,0 +1,13 @@
+package dicegames;
+
+public class PlayPairOfDice {
+
+    public static void main(String[] args) {
+
+        /**
+         * How many times have the dice rolled?
+         */
+        
+    }
+
+}

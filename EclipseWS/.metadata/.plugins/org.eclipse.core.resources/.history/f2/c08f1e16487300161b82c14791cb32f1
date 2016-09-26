@@ -1,0 +1,18 @@
+package PRO1;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+public class P27 {
+    
+    public static void main(String[] args) throws Exception {
+        URL imageLocation = new URL(
+            "http://static2.businessinsider.com/image/50d2017769beddb501000004-1000-667/otter%203.jpg");
+        JOptionPane.showMessageDialog(null, "Here is otter!", "Where is otter?",
+            JOptionPane.PLAIN_MESSAGE,
+            new ImageIcon(imageLocation));
+    }
+    
+}
