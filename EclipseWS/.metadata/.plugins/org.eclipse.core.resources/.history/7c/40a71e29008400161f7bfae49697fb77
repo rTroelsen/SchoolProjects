@@ -1,0 +1,222 @@
+package dicegames;
+
+/**
+ * This class models one pair of dices. This is useful for games where you have to
+ * throw two dice at once.
+ */
+public class PairOfDices {
+
+    /**
+     * The first die in the pair.
+     */
+    private Die die1;
+
+    /**
+     * The second die in the pair.
+     */
+    private Die die2;
+
+    /**
+     * Amount of rolls made since application start
+     */
+    private int rolls = 0;
+
+    /**
+     * Amount of sixes rolled since first roll
+     */
+    private int six = 0;
+    
+    /**
+     * Amount of fives rolled since first roll
+     */
+    private int five = 0;
+    
+    /**
+     * Amount of fours rolled since first roll
+     */
+    private int four = 0;
+    
+    /**
+     * Amount of threes rolled since first roll
+     */
+    private int three = 0;
+    
+    /**
+     * Amount of twos rolled since first roll
+     */
+    private int two = 0;
+    
+    /**
+     * Amount of ones rolled since first roll
+     */
+    private int ones = 0;
+
+    /**
+     * Amount of times dices has had the same value
+     */
+    private int sameValue = 0;
+
+    /**
+     * Holds the value of the highest roll made
+     */
+    private int highestRoll = 0;
+    
+    /**
+     * Constructor for objects of class PairOfDices with no parameters
+     */
+    public PairOfDices() {
+        die1 = new Die(6);
+        die2 = new Die(6);
+    }
+    
+    /**
+     * Constructor for objects of class PairOfDices with parameter 'sides'
+     * @param sides
+     */
+    public PairOfDices(int sides) {
+        die1 = new Die(sides);
+        die2 = new Die(sides);
+    }
+    
+    /**
+     * Method calls roll on both dices of the object
+     */
+    public void rollBothDices() {
+        // Roll each of the two dice
+        die1.roll();
+        die2.roll();
+
+        // Increment the face counts of both dice
+        incrementFaceCount(die1);
+        incrementFaceCount(die2);
+        
+        /*
+         * Checks if die1's value is the same as die2's
+         * if it is, add one to sameValue
+         */
+        if (die1.getFaceValue() == die2.getFaceValue()) {
+            sameValue++;
+        }
+
+        /*
+         *  Checks if the value of the new roll is greater than the highest roll
+         */
+        if (die1.getFaceValue() + die2.getFaceValue() > highestRoll) {
+            // if it is, we assign the new rolls value to highestRoll
+            highestRoll = (die1.getFaceValue() + die2.getFaceValue());
+        }
+        
+        rolls++; //add one to amount of rolls
+    }
+
+    private void incrementFaceCount(Die die) {
+        /*
+         * Check the face of the given die, and increment the
+         * amount of times this face has been rolled
+         */
+        int value = die.getFaceValue();
+
+        if (value == 6) {
+            six++;
+        }
+        else if (value == 5) {
+            five++;
+        }
+        else if (value == 4) {
+            four++;
+        }
+        else if (value == 3) {
+            three++;
+        }
+        else if (value == 2) {
+            two++;
+        }
+        else if (value == 1) {
+            ones++;
+        }
+    }
+    
+    /**
+     * Returns the sum of the pair of dices
+     * @return
+     */
+    public int sumOfDices() {
+        return die1.getFaceValue() + die2.getFaceValue();
+    }
+    
+    /**
+     * Resets all values of the PairOfDices object
+     */
+    
+    public void resetPairOfDices() {
+        setRolls(0);
+        setSix(0);
+        setFive(0);
+        setOne(0);
+        setSameValue(0);
+        setHighestRoll(0);
+    }
+    
+    /**
+     * @return the sameValue
+     */
+    public int getSameValue() {
+        return sameValue;
+    }
+    
+    /**
+     * @return the highestRoll
+     */
+    public int getHighestRoll() {
+        return highestRoll;
+    }
+    
+    /**
+     * @return the rolls
+     */
+    public int getRolls() {
+        return rolls;
+    }
+    
+    /**
+     * @return the six
+     */
+    public int getSix() {
+        return six;
+    }
+    
+    /**
+     * @return the five
+     */
+    public int getFive() {
+        return five;
+    }
+    
+    /**
+     * @return the four
+     */
+    public int getFour() {
+        return four;
+    }
+    
+    /**
+     * @return the three
+     */
+    public int getThree() {
+        return three;
+    }
+    
+    /**
+     * @return the two
+     */
+    public int getTwo() {
+        return two;
+    }
+    
+    /**
+     * @return the one
+     */
+    public int getOnes() {
+        return ones;
+    }
+}
