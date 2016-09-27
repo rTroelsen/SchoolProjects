@@ -1,0 +1,61 @@
+package dicegames;
+
+import java.util.Scanner;
+
+public class SpilPig {
+    
+    private Die die;
+    
+    private Scanner scan;
+    
+    private int playerOneScore = 0;
+    
+    private int playerTwoScore = 0;
+    
+    private int tempScore = 0;
+    
+    private boolean endGame = false;
+    
+    private boolean playerOneTurn = true;
+    
+    public SpilPig() {
+        die = new Die();
+        scan = new Scanner(System.in);
+    }
+    
+    private void showWelcomeMessage() {
+        System.out.println("Welcome to SpilPig!");
+        System.out.println();
+    }
+
+    private void showEndMessage() {
+        System.out.println("Game over!");
+    }
+
+    private void takeTurn() {
+        die.roll();
+        
+        if (playerOneTurn) {
+            System.out.println("Your roll is: " + die.getFaceValue() + "!");
+        }
+        
+    }
+    
+    public void startGame() {
+        boolean endGame = false;
+        showWelcomeMessage();
+        while (!endGame) {
+            System.out.println();
+            System.out.print("Throw dices? Y/N ");
+            String proceed = scan.nextLine();
+            if (proceed.equalsIgnoreCase("N")) {
+                endGame = true;
+                System.out.println("Thanks for playing!");
+            }
+            else {
+                takeTurn();
+            }
+        }
+    }
+
+}

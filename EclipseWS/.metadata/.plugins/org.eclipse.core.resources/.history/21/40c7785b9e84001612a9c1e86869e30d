@@ -1,0 +1,25 @@
+package dicegames;
+
+import java.util.Scanner;
+
+public class SpilPig {
+
+    private Die die;
+
+    private Scanner scan;
+
+    public SpilPig() {
+        die = new Die();
+        scan = new Scanner(System.in);
+    }
+
+    private void showWelcomeMessage() {
+        System.out.println("Welcome to SpilPig!");
+        System.out.println();
+    }
+    
+    private void showEndMessage() {
+        System.out.println("Game over!");
+    }
+    
+}

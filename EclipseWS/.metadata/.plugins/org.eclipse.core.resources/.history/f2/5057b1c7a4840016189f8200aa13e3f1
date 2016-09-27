@@ -1,0 +1,74 @@
+package dicegames;
+
+import java.util.Scanner;
+
+public class SpilPig {
+    
+    private Die die;
+    
+    private Scanner scan;
+    
+    private int playerOneScore = 0;
+    
+    private int playerTwoScore = 0;
+    
+    private int tempScore = 0;
+    
+    private boolean endGame = false;
+    
+    private boolean playerOneTurn = true;
+    
+    public SpilPig() {
+        die = new Die();
+        scan = new Scanner(System.in);
+    }
+    
+    private void showWelcomeMessage() {
+        System.out.println("Welcome to SpilPig!");
+        System.out.println();
+    }
+
+    private void showEndMessage() {
+        System.out.println("Game over!");
+    }
+
+    private void takeTurn() {
+        int faceValue = die.getFaceValue();
+        boolean proceed = true;
+
+        while (faceValue != 1 && proceed) {
+            die.roll();
+            System.out.println("Your roll is: " + die.getFaceValue() + "!");
+            tempScore += faceValue;
+            System.out.println("Your temporary score is: " + tempScore);
+            System.out.println();
+            System.out.println("Do you want to throw again? ");
+            String proceedWithGame = scan.next();
+            if (proceedWithGame.equalsIgnoreCase("n")) {
+                if (playerOneTurn) {
+                    playerOneTurn = false;
+                    if (faceValue != 1) {
+                        playerOneScore = tempScore;
+                        proceed = false;
+                    }
+                }
+                else {
+                    playerOneTurn = true;
+                    if (faceValue != 1) {
+                        playerTwoScore = tempScore;
+                        proceed = false;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    public void startGame() {
+        showWelcomeMessage();
+        while (playerOneScore < 100 && playerTwoScore < 100) {
+            takeTurn();
+        }
+    }
+
+}

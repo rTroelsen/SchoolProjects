@@ -1,7 +1,0 @@
-package classes;
-
-public class Increasing {
-    public static void main(String[] args) {
-        IncreasingNumber number = new IncreasingNumber(0, 0, 0);
-    }
-}

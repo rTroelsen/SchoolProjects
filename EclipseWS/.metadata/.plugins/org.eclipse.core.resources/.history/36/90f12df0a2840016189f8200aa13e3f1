@@ -1,0 +1,63 @@
+package dicegames;
+
+import java.util.Scanner;
+
+public class SpilPig {
+    
+    private Die die;
+    
+    private Scanner scan;
+    
+    private int playerOneScore = 0;
+    
+    private int playerTwoScore = 0;
+    
+    private int tempScore = 0;
+    
+    private boolean playerOneTurn = true;
+    
+    public SpilPig() {
+        die = new Die();
+        scan = new Scanner(System.in);
+    }
+    
+    private void showWelcomeMessage() {
+        System.out.println("Welcome to SpilPig!");
+        System.out.println();
+    }
+
+    private void showEndMessage() {
+        System.out.println("Game over!");
+    }
+
+    private void takeTurn() {
+        die.roll();
+        int faceValue = die.getFaceValue();
+        boolean proceed = true;
+
+        while (faceValue != 1 && proceed) {
+            tempScore += faceValue;
+            proceedWithGame();
+            
+        }
+
+        if (playerOneTurn) {
+            playerOneTurn = false;
+            if (faceValue != 1) {
+                playerOneScore = tempScore;
+            }
+        }
+        else {
+            playerOneTurn = true;
+            if (faceValue != 1) {
+                playerTwoScore = tempScore;
+            }
+        }
+        
+    }
+    
+    private void proceedWithGame() {
+        
+    }
+
+}

@@ -1,0 +1,9 @@
+package dicegames;
+
+public class SpilPig {
+    private Die die;
+    
+    public SpilPig() {
+        die = new  Die();
+    }
+}
