@@ -1,0 +1,22 @@
+package Exercise1;
+
+public class TestKonto {
+
+    public static void main(String[] args) {
+        Konto konto = new Konto("hestePik", 69);
+        konto.indsætBeløb(5000);
+        System.out.println(konto.getSaldo());
+        konto.indsætBeløb(5000);
+        System.out.println(konto.getSaldo());
+        konto.indsætBeløb(5000);
+        System.out.println(konto.getSaldo());
+        konto.indsætBeløb(5000);
+        System.out.println(konto.getSaldo());
+        konto.indsætBeløb(5000);
+        System.out.println(konto.getSaldo());
+        konto.indsætBeløb(5000);
+        System.out.println(konto.getSaldo());
+        
+    }
+
+}

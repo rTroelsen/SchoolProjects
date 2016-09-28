@@ -1,0 +1,35 @@
+package Exercise1;
+
+public class Konto {
+    private int nr;
+    
+    private int saldo;
+    
+    private String kontoType;
+    
+    public Konto(String kontoType, int nr) {
+        this.nr = nr;
+        this.saldo = saldo;
+        this.kontoType = kontoType;
+    }
+    
+    public void indsætBeløb(int beløb) {
+        this.saldo += beløb;
+    }
+
+    public int getNr() {
+        return nr;
+    }
+    
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public String getKontoType() {
+        return kontoType;
+    }
+
+    public void setKontoType(String kontoType) {
+        this.kontoType = kontoType;
+    }
+}
